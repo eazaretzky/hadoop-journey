@@ -1,0 +1,21 @@
+1. First step: Install hadoop
+=============================
+
+To be able to run a hadoop, of course that we need to install it first. The process to have a running hadoop in stand alone version it's preaty straightforward.
+
+1.a. Download a hadoop version from the apache site. For example, the 0.21 versionLink: http://archive.apache.org/dist/hadoop/core/hadoop-0.21.0/hadoop-0.21.0.tar.gz
+
+1.b. Uncompress the downloaded file in, for example, /home/esteban/Applications/hadoop-0.21.0
+
+1.c. Set the JAVA_HOME and add hadoop to PATH:
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre
+export HADOOP_INSTALL=/home/esteban/Applications/hadoop-0.21.0
+export PATH=$PATH:$HADOOP_INSTALL/bin
+
+1.d. That's all!, now check if it's running well checking the version of hadoop.
+➜  ~  hadoop version    
+Hadoop 0.21.0
+Subversion https://svn.apache.org/repos/asf/hadoop/common/branches/branch-0.21 -r 985326
+Compiled by tomwhite on Tue Aug 17 01:02:28 EDT 2010
+From source with checksum a1aeb15b4854808d152989ba76f90fac
+

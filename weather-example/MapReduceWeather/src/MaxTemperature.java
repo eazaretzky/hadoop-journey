@@ -7,17 +7,13 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class MaxTemperature {
   public static void main(final String[] args) throws Exception {
-    if (args.length != 2) {
-      System.err.println("Usage: MaxTemperature <input path> <output path>");
-      System.exit(-1);
-    }
 
     final Job job = new Job();
     job.setJarByClass(MaxTemperature.class);
     job.setJobName("Max temperature");
 
-    FileInputFormat.addInputPath(job, new Path(args[0]));
-    FileOutputFormat.setOutputPath(job, new Path(args[1]));
+    FileInputFormat.addInputPath(job, new Path("/home/esteban/projects/hadoop-journey/weather-example/data/1901"));
+    FileOutputFormat.setOutputPath(job, new Path("/home/esteban/projects/hadoop-journey/weather-example/out"));
 
     job.setMapperClass(MaxTemperatureMapper.class);
     job.setReducerClass(MaxTemperatureReducer.class);
